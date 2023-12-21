@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D6E0C412B3490B10000A2E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E0C402B3490B10000A2E9 /* AppDelegate.swift */; };
-		5D6E0C452B3490B10000A2E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E0C442B3490B10000A2E9 /* ViewController.swift */; };
+		5D6E0C452B3490B10000A2E9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E0C442B3490B10000A2E9 /* HomeViewController.swift */; };
 		5D6E0C4A2B3490B20000A2E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6E0C492B3490B20000A2E9 /* Assets.xcassets */; };
 		5D6E0C4D2B3490B20000A2E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6E0C4B2B3490B20000A2E9 /* LaunchScreen.storyboard */; };
 		A3E606F3F43A73BACA972130 /* Pods_MealApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BD4650F85312F26720C1B3 /* Pods_MealApp.framework */; };
@@ -18,7 +18,7 @@
 		40BD4650F85312F26720C1B3 /* Pods_MealApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6E0C3D2B3490B10000A2E9 /* MealApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6E0C402B3490B10000A2E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D6E0C442B3490B10000A2E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5D6E0C442B3490B10000A2E9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5D6E0C492B3490B20000A2E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D6E0C4C2B3490B20000A2E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D6E0C4E2B3490B20000A2E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,13 +59,109 @@
 		5D6E0C3F2B3490B10000A2E9 /* MealApp */ = {
 			isa = PBXGroup;
 			children = (
-				5D6E0C402B3490B10000A2E9 /* AppDelegate.swift */,
-				5D6E0C442B3490B10000A2E9 /* ViewController.swift */,
-				5D6E0C492B3490B20000A2E9 /* Assets.xcassets */,
-				5D6E0C4B2B3490B20000A2E9 /* LaunchScreen.storyboard */,
-				5D6E0C4E2B3490B20000A2E9 /* Info.plist */,
+				5DCE01A02B34924D00C1A68A /* App */,
+				5DCE01A82B34933600C1A68A /* Domain */,
+				5DCE01A72B34933200C1A68A /* Data */,
 			);
 			path = MealApp;
+			sourceTree = "<group>";
+		};
+		5DCE01A02B34924D00C1A68A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5DCE01A12B34929000C1A68A /* Main */,
+				5DCE01A62B3492F000C1A68A /* Depedency */,
+				5DCE01A42B3492CE00C1A68A /* Modules */,
+				5DCE01A32B3492BE00C1A68A /* Resource */,
+				5DCE01A22B3492B700C1A68A /* Utils */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5DCE01A12B34929000C1A68A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5D6E0C402B3490B10000A2E9 /* AppDelegate.swift */,
+				5D6E0C4B2B3490B20000A2E9 /* LaunchScreen.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5DCE01A22B3492B700C1A68A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5DCE01A32B3492BE00C1A68A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				5D6E0C492B3490B20000A2E9 /* Assets.xcassets */,
+				5D6E0C4E2B3490B20000A2E9 /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		5DCE01A42B3492CE00C1A68A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5DCE01A52B3492D500C1A68A /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5DCE01A52B3492D500C1A68A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5D6E0C442B3490B10000A2E9 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5DCE01A62B3492F000C1A68A /* Depedency */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Depedency;
+			sourceTree = "<group>";
+		};
+		5DCE01A72B34933200C1A68A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5DCE01A82B34933600C1A68A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5DCE01AB2B3493E600C1A68A /* Model */,
+				5DCE01AA2B3493E000C1A68A /* Repository */,
+				5DCE01A92B3493DA00C1A68A /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5DCE01A92B3493DA00C1A68A /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		5DCE01AA2B3493E000C1A68A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		5DCE01AB2B3493E600C1A68A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		682E0FC36A6828BD02F1A65D /* Pods */ = {
@@ -181,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D6E0C452B3490B10000A2E9 /* ViewController.swift in Sources */,
+				5D6E0C452B3490B10000A2E9 /* HomeViewController.swift in Sources */,
 				5D6E0C412B3490B10000A2E9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +425,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3HH926728D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MealApp/Info.plist;
+				INFOPLIST_FILE = MealApp/App/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -357,7 +453,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3HH926728D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MealApp/Info.plist;
+				INFOPLIST_FILE = MealApp/App/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
