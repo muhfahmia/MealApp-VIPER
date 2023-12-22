@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol Injection: HomeInjection {}
+protocol Injection: HomeInjection, DetailInjection {}
 
 class AppInjection: Injection {}

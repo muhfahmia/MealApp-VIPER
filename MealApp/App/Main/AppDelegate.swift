@@ -17,9 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = injection.resolve()
-        
+        let router: HomeRouter = injection.resolve()
+        router.routeToHome(window: window)
         return true
     }
 
