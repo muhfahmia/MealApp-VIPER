@@ -11,6 +11,7 @@ struct Meal {
     var idMeal: String?
     var name: String?
     var imageUrl: String?
+    var instructions: String?
 }
 
 struct Meals {

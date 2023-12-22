@@ -22,7 +22,6 @@ class DefaultDetailRouter: DetailRouter {
     
     func routeToDetail(vc: UIViewController, meal: Meal) {
         let detailVC: DetailViewController = injection.resolve(meal: meal)
-        print("routerrr")
         vc.navigationController?.pushViewController(detailVC, animated: true)
     }
     

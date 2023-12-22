@@ -14,9 +14,10 @@ extension Meal: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        idMeal      <- map["idMeal"]
-        name        <- map["strMeal"]
-        imageUrl    <- map["strMealThumb"]
+        idMeal          <- map["idMeal"]
+        name            <- map["strMeal"]
+        imageUrl        <- map["strMealThumb"]
+        instructions    <- map["strInstructions"]
     }
 }
 

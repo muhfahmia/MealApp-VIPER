@@ -6,13 +6,21 @@
 //
 
 import UIKit
+import SDWebImage
 
-class DetailViewController: UIViewController {
+protocol DetailViewInterface {
+    func updateSuccessDetail(meal: Meal)
+}
+
+class DetailViewController: UIViewController, DetailViewInterface {
     
-    var meal: Meal
+    @IBOutlet weak var mealImage: UIImageView!
+    @IBOutlet weak var mealTitle: UILabel!
+    @IBOutlet weak var mealInstruction: UILabel!
+    
+    var presenter: DetailPresenter?
     
     init(meal: Meal) {
-        self.meal = meal
         super.init(nibName: String(describing: DetailViewController.self), bundle: nil)
     }
     
@@ -22,19 +30,15 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Detail"
+        presenter?.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func updateSuccessDetail(meal: Meal) {
+        mealImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        mealImage.sd_setImage(with: URL(string: meal.imageUrl ?? ""))
+        mealTitle.text = meal.name
+        mealInstruction.text = meal.instructions
     }
-    */
-
 }
