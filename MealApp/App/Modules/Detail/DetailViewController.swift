@@ -39,6 +39,8 @@ class DetailViewController: UIViewController, DetailViewInterface {
         mealImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
         mealImage.sd_setImage(with: URL(string: meal.imageUrl ?? ""))
         mealTitle.text = meal.name
-        mealInstruction.text = meal.instructions
+        mealInstruction.lineBreakMode = .byWordWrapping
+        let txtIns = meal.instructions?.replacingOccurrences(of: "/r/n", with: "\n")
+        mealInstruction.text = txtIns
     }
 }
