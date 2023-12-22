@@ -23,15 +23,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bYS-sD-PBX">
-                        <rect key="frame" x="0.0" y="0.0" width="325" height="133.66666666666666"/>
+                        <rect key="frame" x="12" y="12.000000000000007" width="301" height="121.66666666666669"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="bYS-sD-PBX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EHB-VE-Q3X"/>
-                <constraint firstAttribute="trailing" secondItem="bYS-sD-PBX" secondAttribute="trailing" id="IEi-Dm-1uo"/>
-                <constraint firstItem="bYS-sD-PBX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="R84-qq-HEp"/>
+                <constraint firstItem="bYS-sD-PBX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="EHB-VE-Q3X"/>
+                <constraint firstAttribute="trailing" secondItem="bYS-sD-PBX" secondAttribute="trailing" constant="12" id="IEi-Dm-1uo"/>
+                <constraint firstItem="bYS-sD-PBX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="R84-qq-HEp"/>
                 <constraint firstAttribute="bottom" secondItem="Sms-rk-6ep" secondAttribute="bottom" constant="10" id="abA-GT-Ng5"/>
                 <constraint firstItem="Sms-rk-6ep" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="k8p-dY-2R3"/>
                 <constraint firstAttribute="trailing" secondItem="Sms-rk-6ep" secondAttribute="trailing" constant="15" id="mzS-Wo-yRi"/>

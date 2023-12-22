@@ -17,6 +17,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tblView: UITableView!
     
     enum TableSection: Int, CaseIterable {
+        case listCategories
         case listMeal
     }
     
@@ -24,14 +25,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Meals"
         setupTblView()
         presenter?.viewDidLoad()
     }
     
     private func setupTblView() {
         tblView.dataSource = self
-        tblView.delegate = self
         tblView.register(nibWithCellClass: MealCardTableViewCell.self)
+        tblView.register(nibWithCellClass: MealCategoriesListTableViewCell.self)
     }
     
     func updateSuccess() {
@@ -43,33 +45,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = TableSection(rawValue: section)
-        switch section {
-        case .listMeal:
-            return 1
-        case .none:
-            return 0
-        }
+        return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = TableSection(rawValue: indexPath.section)
-        switch section {
-        case .listMeal:
+        let section = TableSection.allCases[indexPath.section]
+        
+        if section == .listCategories {
+            let cell: MealCategoriesListTableViewCell = tableView.dequeueReusableCell(withClass: MealCategoriesListTableViewCell.self, for: indexPath)
+            return cell
+        } else if section == .listMeal {
             let cell: MealCardTableViewCell = tableView.dequeueReusableCell(withClass: MealCardTableViewCell.self, for: indexPath)
             cell.configure(with: presenter?.meals ?? [])
             cell.mealClicked = { [weak self] meal in
                 self?.presenter?.routeToDetail(vc: self!, meal: meal)
             }
             return cell
-        case .none:
-            return UITableViewCell()
         }
+        return UITableViewCell()
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-
 }
 

@@ -10,16 +10,11 @@ import UIKit
 class MealCardTableViewCell: UITableViewCell {
    
    @IBOutlet weak var mealsCardCL: UICollectionView!
-   var meals: [Meal]?
-   
-   var cardSizeContent: CGSize?
-   
+    var meals: [Meal]?
     var mealClicked: ((Meal) -> Void)?
-   
-   
+    
     override func awakeFromNib() {
        super.awakeFromNib()
-        cardSizeContent = mealsCardCL.getResponsiveGrid(estimatedWidth: 0.45, heightRatio: 1, grid: 2)
        setupUI()
    }
    
@@ -28,8 +23,8 @@ class MealCardTableViewCell: UITableViewCell {
    }
    
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-       self.layoutIfNeeded()
-        return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        self.layoutIfNeeded()
+        return mealsCardCL.contentSize
    }
    
    func setupUI() {
@@ -64,17 +59,10 @@ extension MealCardTableViewCell: UICollectionViewDataSource {
 }
 
 extension MealCardTableViewCell: UICollectionViewDelegateFlowLayout {
-   
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-       return 12
-   }
-   
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-       return 0
-   }
-   
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 200)
+        let insets = UIEdgeInsets(top: 0, left: 12, bottom: 12, right: 0)
+        return collectionView.calculateCellSize(collectionViewWidth: collectionView.bounds.width, heightRatio: 0.8, insets: insets, columns: 2)
    }
 }
 

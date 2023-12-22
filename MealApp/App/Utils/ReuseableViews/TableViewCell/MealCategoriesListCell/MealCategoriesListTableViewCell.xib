@@ -10,17 +10,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="153" id="KGk-i7-Jjw" customClass="MealCardTableViewCell" customModule="MealApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="446" height="153"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="154" id="KGk-i7-Jjw" customClass="MealCategoriesListTableViewCell" customModule="MealApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="154"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="446" height="153"/>
+                <rect key="frame" x="0.0" y="0.0" width="420" height="154"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TbS-QJ-LPf">
-                        <rect key="frame" x="0.0" y="0.0" width="446" height="153"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="g7Z-U1-MxA">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="154"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MrL-vi-oh6">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="08k-9Y-Nhw">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -29,17 +29,17 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="TbS-QJ-LPf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EbV-eR-iCa"/>
-                    <constraint firstItem="TbS-QJ-LPf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="TjE-bA-gb7"/>
-                    <constraint firstAttribute="bottom" secondItem="TbS-QJ-LPf" secondAttribute="bottom" id="iAy-rv-Idu"/>
-                    <constraint firstAttribute="trailing" secondItem="TbS-QJ-LPf" secondAttribute="trailing" id="q6L-YH-uf3"/>
+                    <constraint firstItem="g7Z-U1-MxA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KlB-L5-1a1"/>
+                    <constraint firstItem="g7Z-U1-MxA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aoO-i5-Ygp"/>
+                    <constraint firstAttribute="trailing" secondItem="g7Z-U1-MxA" secondAttribute="trailing" id="hye-kQ-Fyp"/>
+                    <constraint firstAttribute="bottom" secondItem="g7Z-U1-MxA" secondAttribute="bottom" id="pcl-nd-v98"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="mealsCardCL" destination="TbS-QJ-LPf" id="sNx-ol-z1g"/>
+                <outlet property="mealCategoriesCV" destination="g7Z-U1-MxA" id="JXW-3O-C3F"/>
             </connections>
-            <point key="canvasLocation" x="164.8854961832061" y="58.098591549295776"/>
+            <point key="canvasLocation" x="145.03816793893128" y="58.450704225352112"/>
         </tableViewCell>
     </objects>
     <resources>

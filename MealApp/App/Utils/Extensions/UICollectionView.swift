@@ -33,17 +33,18 @@ extension UICollectionView {
         register(T.self, forCellWithReuseIdentifier: String(describing: name))
     }
     
-    func getResponsiveGrid(estimatedWidth: CGFloat, heightRatio: CGFloat, grid: CGFloat) -> CGSize {
-        let screenWidth = UIScreen.main.bounds.width
-        let deviceModel = UIDevice.current.model
-        var estimatedWidth = estimatedWidth
-        if deviceModel == "iPad" {
-            estimatedWidth = estimatedWidth - 0.35
-        }
-        let cellWidth = (screenWidth * estimatedWidth) - (grid - 1) / grid
-        let cellHeight = cellWidth * heightRatio
-        let size = CGSize(width: cellWidth, height: cellHeight)
-        return size
+    func calculateCellSize(collectionViewWidth: CGFloat, heightRatio: CGFloat, insets: UIEdgeInsets, columns: Int) -> CGSize {
+        let totalSpacing = CGFloat(columns - 1)
+        let availableWidth = collectionViewWidth - insets.left - insets.right - totalSpacing
+        let cellWidth = availableWidth / CGFloat(columns)
+
+        // Calculate cell height based on aspect ratio or other criteria
+        let cellHeight = cellWidth * heightRatio// Adjust as needed
+//        print("CL Width: \(collectionViewWidth)")
+//        print("Available width: \(availableWidth)")
+//        print("insets: \(insets)")
+
+        return CGSize(width: cellWidth, height: cellHeight)
     }
     
 }
