@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol DetailRouter {
-    func routeToDetail(vc: UIViewController)
+    func routeToDetail(vc: UIViewController, meal: Meal)
 }
 
 class DefaultDetailRouter: DetailRouter {
@@ -20,8 +20,9 @@ class DefaultDetailRouter: DetailRouter {
         self.injection = injection
     }
     
-    func routeToDetail(vc: UIViewController) {
-        let detailVC: DetailViewController = injection.resolve()
+    func routeToDetail(vc: UIViewController, meal: Meal) {
+        let detailVC: DetailViewController = injection.resolve(meal: meal)
+        print("routerrr")
         vc.navigationController?.pushViewController(detailVC, animated: true)
     }
     

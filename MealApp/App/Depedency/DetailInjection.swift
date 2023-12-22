@@ -8,13 +8,13 @@
 import Foundation
 
 protocol DetailInjection {
-    func resolve() -> DetailViewController
+    func resolve(meal: Meal) -> DetailViewController
     func resolve() -> DetailRouter
 }
 
 extension DetailInjection where Self: Injection {
-    func resolve() -> DetailViewController {
-        return DetailViewController()
+    func resolve(meal: Meal) -> DetailViewController {
+        return DetailViewController(meal: meal)
     }
     
     func resolve() -> DetailRouter {

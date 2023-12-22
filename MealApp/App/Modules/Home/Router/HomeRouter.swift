@@ -10,7 +10,7 @@ import UIKit
 
 protocol HomeRouter {
     func routeToHome(window: UIWindow?)
-    func routeToDetail(vc: UIViewController)
+    func routeToDetail(vc: UIViewController, meal: Meal)
 }
 
 class DefaultHomeRouter: HomeRouter {
@@ -21,15 +21,16 @@ class DefaultHomeRouter: HomeRouter {
         self.injection = injection
     }
     
+    
     func routeToHome(window: UIWindow?) {
         let vc: HomeViewController = injection.resolve()
         window?.makeKeyAndVisible()
         window?.rootViewController = UINavigationController(rootViewController: vc)
     }
     
-    func routeToDetail(vc: UIViewController) {
+    func routeToDetail(vc: UIViewController, meal: Meal) {
         let detailVC: DetailRouter = injection.resolve()
-        detailVC.routeToDetail(vc: vc)
+        detailVC.routeToDetail(vc: vc, meal: meal)
     }
     
 }

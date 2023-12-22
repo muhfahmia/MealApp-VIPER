@@ -8,7 +8,18 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
+    var meal: Meal
+    
+    init(meal: Meal) {
+        self.meal = meal
+        super.init(nibName: String(describing: DetailViewController.self), bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

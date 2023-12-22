@@ -58,6 +58,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         case .listMeal:
             let cell: MealCardTableViewCell = tableView.dequeueReusableCell(withClass: MealCardTableViewCell.self, for: indexPath)
             cell.configure(with: presenter?.meals ?? [])
+            cell.mealClicked = { [weak self] meal in
+                self?.presenter?.routeToDetail(vc: self!, meal: meal)
+            }
             return cell
         case .none:
             return UITableViewCell()

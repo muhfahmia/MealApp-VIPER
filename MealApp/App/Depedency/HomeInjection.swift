@@ -23,8 +23,10 @@ extension HomeInjection where Self: Injection {
         let vc = HomeViewController()
         let presenter: HomePresenter = resolve()
         let interactor: HomeInteractor = resolve()
+        let router: HomeRouter = resolve()
         vc.presenter = presenter
         vc.presenter?.interactor = interactor
+        vc.presenter?.router = router
         vc.presenter?.view = vc
         vc.presenter?.interactor?.presenter = presenter
         return vc

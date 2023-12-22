@@ -6,14 +6,17 @@
 //
 
 import Foundation
+import UIKit
 
 protocol HomePresenter {
     var view: HomeViewInterface? { get set }
     var presenter: HomePresenter? { get set }
     var interactor: HomeInteractor? { get set }
+    var router: HomeRouter? { get set }
     var meals: [Meal] { get set }
     func viewDidLoad()
     func successFetchMealByCategories(meals: [Meal])
+    func routeToDetail(vc: UIViewController, meal: Meal)
 }
 
 class DefaultHomePresenter: HomePresenter {
@@ -22,6 +25,8 @@ class DefaultHomePresenter: HomePresenter {
     var presenter: HomePresenter?
     
     var interactor: HomeInteractor?
+    
+    var router: HomeRouter?
     
     var meals: [Meal] = []
     
@@ -35,6 +40,10 @@ class DefaultHomePresenter: HomePresenter {
     func successFetchMealByCategories(meals: [Meal]) {
         self.meals = meals
         view?.updateSuccess()
+    }
+    
+    func routeToDetail(vc: UIViewController, meal: Meal) {
+        router?.routeToDetail(vc: vc, meal: meal)
     }
     
 }
