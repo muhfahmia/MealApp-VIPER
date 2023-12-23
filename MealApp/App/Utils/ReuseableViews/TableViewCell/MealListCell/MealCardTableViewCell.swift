@@ -24,7 +24,7 @@ class MealCardTableViewCell: UITableViewCell {
    
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         self.layoutIfNeeded()
-        return mealsCardCL.contentSize
+        return CGSize(width: mealsCardCL.contentSize.width, height: mealsCardCL.contentSize.height+24)
    }
    
    func setupUI() {

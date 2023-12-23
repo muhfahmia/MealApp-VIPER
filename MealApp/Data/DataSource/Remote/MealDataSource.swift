@@ -11,6 +11,7 @@ import RxSwift
 protocol MealDataSource {
     func list(category: String) -> Observable<[Meal]>
     func detail(id: String) -> Observable<Meal>
+    func categories() -> Observable<[MealCategory]>
 }
 
 struct DefaultMealDataSource: MealDataSource {
@@ -22,5 +23,11 @@ struct DefaultMealDataSource: MealDataSource {
     func detail(id: String) -> Observable<Meal> {
         return APIManager.shared.request(MealAPI.mealDetail(withID: id).endpoint, response: Meals.self)
             .compactMap { $0.meals?.first }
+    }
+    
+    func categories() -> Observable<[MealCategory]> {
+        return APIManager.shared.request(MealAPI.listCategories.endpoint, response: MealCategories.self)
+            .compactMap { $0.categories }
+        
     }
 }

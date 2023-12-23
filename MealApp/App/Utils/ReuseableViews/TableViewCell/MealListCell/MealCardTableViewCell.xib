@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,9 +16,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="446" height="153"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TbS-QJ-LPf">
-                        <rect key="frame" x="0.0" y="0.0" width="446" height="153"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TbS-QJ-LPf">
+                        <rect key="frame" x="12" y="12" width="422" height="129"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MrL-vi-oh6">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -29,22 +28,18 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="TbS-QJ-LPf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EbV-eR-iCa"/>
-                    <constraint firstItem="TbS-QJ-LPf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="TjE-bA-gb7"/>
-                    <constraint firstAttribute="bottom" secondItem="TbS-QJ-LPf" secondAttribute="bottom" id="iAy-rv-Idu"/>
-                    <constraint firstAttribute="trailing" secondItem="TbS-QJ-LPf" secondAttribute="trailing" id="q6L-YH-uf3"/>
+                    <constraint firstItem="TbS-QJ-LPf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="57k-Wr-Jmf"/>
+                    <constraint firstItem="TbS-QJ-LPf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Eo9-HP-djh"/>
+                    <constraint firstAttribute="trailing" secondItem="TbS-QJ-LPf" secondAttribute="trailing" constant="12" id="czm-IU-25a"/>
+                    <constraint firstAttribute="bottom" secondItem="TbS-QJ-LPf" secondAttribute="bottom" constant="12" id="khQ-Pl-8MO"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="mealsCardCL" destination="TbS-QJ-LPf" id="sNx-ol-z1g"/>
             </connections>
             <point key="canvasLocation" x="164.8854961832061" y="58.098591549295776"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

@@ -43,6 +43,10 @@
 		5DCE02072B35DF1900C1A68A /* MealCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE02052B35DF1900C1A68A /* MealCategoriesCollectionViewCell.swift */; };
 		5DCE02082B35DF1900C1A68A /* MealCategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCE02062B35DF1900C1A68A /* MealCategoriesCollectionViewCell.xib */; };
 		5DCE020A2B35E80D00C1A68A /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE02092B35E80D00C1A68A /* UIView.swift */; };
+		5DCE020C2B36C09600C1A68A /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE020B2B36C09600C1A68A /* Categories.swift */; };
+		5DCE020E2B36D13800C1A68A /* MealCategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE020D2B36D13800C1A68A /* MealCategoriesResponse.swift */; };
+		5DCE02102B36D2AF00C1A68A /* MealCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE020F2B36D2AF00C1A68A /* MealCategoriesUseCase.swift */; };
+		5DCE02132B36D35500C1A68A /* DataMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE02122B36D35500C1A68A /* DataMealRepository.swift */; };
 		A3E606F3F43A73BACA972130 /* Pods_MealApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BD4650F85312F26720C1B3 /* Pods_MealApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +90,10 @@
 		5DCE02052B35DF1900C1A68A /* MealCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		5DCE02062B35DF1900C1A68A /* MealCategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealCategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
 		5DCE02092B35E80D00C1A68A /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		5DCE020B2B36C09600C1A68A /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		5DCE020D2B36D13800C1A68A /* MealCategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCategoriesResponse.swift; sourceTree = "<group>"; };
+		5DCE020F2B36D2AF00C1A68A /* MealCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCategoriesUseCase.swift; sourceTree = "<group>"; };
+		5DCE02122B36D35500C1A68A /* DataMealRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMealRepository.swift; sourceTree = "<group>"; };
 		7305040530A9DA5A79D6F31D /* Pods-MealApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealApp.debug.xcconfig"; path = "Target Support Files/Pods-MealApp/Pods-MealApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F3AC5295B9053DDEA3D51D7C /* Pods-MealApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealApp.release.xcconfig"; path = "Target Support Files/Pods-MealApp/Pods-MealApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +212,7 @@
 			children = (
 				5DCE01B12B35271D00C1A68A /* Entities */,
 				5DCE01B02B35270D00C1A68A /* Service */,
+				5DCE02112B36D33000C1A68A /* Repository */,
 				5DCE01AC2B35250200C1A68A /* DataSource */,
 			);
 			path = Data;
@@ -282,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				5DCE01B72B352A7F00C1A68A /* MealResponse.swift */,
+				5DCE020D2B36D13800C1A68A /* MealCategoriesResponse.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -290,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				5DCE01B42B35280500C1A68A /* Meal.swift */,
+				5DCE020B2B36C09600C1A68A /* Categories.swift */,
 			);
 			path = Meal;
 			sourceTree = "<group>";
@@ -298,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				5DCE01C32B35648300C1A68A /* MealByCategoriesUseCase.swift */,
+				5DCE020F2B36D2AF00C1A68A /* MealCategoriesUseCase.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -460,6 +472,14 @@
 			path = MealCategoriesCell;
 			sourceTree = "<group>";
 		};
+		5DCE02112B36D33000C1A68A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				5DCE02122B36D35500C1A68A /* DataMealRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		682E0FC36A6828BD02F1A65D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,14 +620,18 @@
 				5DCE01F52B3593F900C1A68A /* DetailInjection.swift in Sources */,
 				5DCE01F72B3596CA00C1A68A /* DetailRouter.swift in Sources */,
 				5DCE01BA2B3530EB00C1A68A /* APIManager.swift in Sources */,
+				5DCE020E2B36D13800C1A68A /* MealCategoriesResponse.swift in Sources */,
 				5DCE01B52B35280500C1A68A /* Meal.swift in Sources */,
 				5DCE01AF2B35251D00C1A68A /* MealDataSource.swift in Sources */,
 				5DCE01D52B356FDF00C1A68A /* HomePresenter.swift in Sources */,
 				5DCE01CF2B356E4900C1A68A /* HomeInteractor.swift in Sources */,
 				5DCE02072B35DF1900C1A68A /* MealCategoriesCollectionViewCell.swift in Sources */,
+				5DCE02102B36D2AF00C1A68A /* MealCategoriesUseCase.swift in Sources */,
 				5DCE01D72B35702100C1A68A /* HomeRouter.swift in Sources */,
 				5DCE01C42B35648300C1A68A /* MealByCategoriesUseCase.swift in Sources */,
 				5DCE01F22B3593C900C1A68A /* DetailViewController.swift in Sources */,
+				5DCE020C2B36C09600C1A68A /* Categories.swift in Sources */,
+				5DCE02132B36D35500C1A68A /* DataMealRepository.swift in Sources */,
 				5DCE02022B35D50100C1A68A /* MealCategoriesListTableViewCell.swift in Sources */,
 				5D6E0C452B3490B10000A2E9 /* HomeViewController.swift in Sources */,
 				5DCE01FE2B35A64C00C1A68A /* MealDetailUseCase.swift in Sources */,

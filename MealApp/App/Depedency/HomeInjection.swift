@@ -15,6 +15,7 @@ protocol HomeInjection {
     func resolve() -> MealDataSource
     func resolve() -> MealRepository
     func resolve() -> MealByCategoriesUseCase
+    func resolve() -> MealCategoriesUseCase
 }
 
 extension HomeInjection where Self: Injection {
@@ -37,7 +38,7 @@ extension HomeInjection where Self: Injection {
     }
     
     func resolve() -> HomeInteractor {
-        return DefaultHomeInteractor(mealByCategoriesUseCase: resolve())
+        return DefaultHomeInteractor(mealByCategoriesUseCase: resolve(), mealCategoriesUseCase: resolve())
     }
     
     func resolve() -> HomeRouter {
@@ -54,6 +55,10 @@ extension HomeInjection where Self: Injection {
     
     func resolve() -> MealByCategoriesUseCase {
         return MealByCategoriesInteractor(repository: resolve())
+    }
+    
+    func resolve() -> MealCategoriesUseCase {
+        return MealCategoriesInteractor(repository: resolve())
     }
     
 }

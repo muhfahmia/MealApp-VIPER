@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 protocol HomeViewInterface {
-    func updateSuccess()
+    func updateSuccess(section: Int)
 }
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HomeViewInterface {
@@ -36,8 +36,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tblView.register(nibWithCellClass: MealCategoriesListTableViewCell.self)
     }
     
-    func updateSuccess() {
-        tblView.reloadData()
+    func updateSuccess(section: Int) {
+        tblView.reloadRows(at: [IndexPath(row: 0, section: section)], with: .fade)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,6 +53,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if section == .listCategories {
             let cell: MealCategoriesListTableViewCell = tableView.dequeueReusableCell(withClass: MealCategoriesListTableViewCell.self, for: indexPath)
+            cell.configure(categories: presenter?.categories ?? [])
+            cell.getMealByCategory = { [weak self] category in
+                self?.presenter?.getMealByCategory(category: category.category!)
+            }
             return cell
         } else if section == .listMeal {
             let cell: MealCardTableViewCell = tableView.dequeueReusableCell(withClass: MealCardTableViewCell.self, for: indexPath)
