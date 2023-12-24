@@ -12,19 +12,34 @@ class MealCategoriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var btnCategory: UIButton!
     
     var categoryClick: ((MealCategory) -> Void)?
+    var category: MealCategory? {
+        didSet {
+            setupUI()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        btnCategory.addAction(UIAction(handler: { [weak self] _ in
+            guard let self = self else { return }
+            self.categoryClick?(self.category!)
+            print(self.category!)
+        }), for: .touchUpInside)
     }
     
     func configure(category: MealCategory) {
-        btnCategory.setTitle(category.category, for: .normal)
-        btnCategory.titleLabel?.lineBreakMode = .byClipping
+        self.category = category
+    }
+    
+    func setupUI() {
+        var config = UIButton.Configuration.plain()
+        config.titleLineBreakMode = .byTruncatingTail
+        config.title = category?.category
+        btnCategory.configuration = config
+        btnCategory.titleLabel?.numberOfLines = 1
+        btnCategory.layer.cornerRadius = 15
         btnCategory.tintColor = .white
-        btnCategory.addAction(UIAction(handler: { [weak self] _ in
-            self?.categoryClick?(category)
-        }), for: .touchUpInside)
+        btnCategory.backgroundColor = .black
     }
 
 }

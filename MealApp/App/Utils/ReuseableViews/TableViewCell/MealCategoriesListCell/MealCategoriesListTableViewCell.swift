@@ -20,11 +20,6 @@ class MealCategoriesListTableViewCell: UITableViewCell, UICollectionViewDataSour
         // Initialization code
     }
     
-    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-        self.layoutIfNeeded()
-        return mealCategoriesCV.contentSize
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

@@ -25,9 +25,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Meals"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Seafood Meal"
         setupTblView()
         presenter?.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func setupTblView() {
@@ -55,6 +61,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let cell: MealCategoriesListTableViewCell = tableView.dequeueReusableCell(withClass: MealCategoriesListTableViewCell.self, for: indexPath)
             cell.configure(categories: presenter?.categories ?? [])
             cell.getMealByCategory = { [weak self] category in
+                self?.title = String(describing: category.category!+" Meal")
                 self?.presenter?.getMealByCategory(category: category.category!)
             }
             return cell
